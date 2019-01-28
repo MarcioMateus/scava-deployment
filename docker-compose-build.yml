@@ -33,8 +33,6 @@ services:
             - api-server
         networks:
             - default
-        expose:
-            - 80
         ports:
             - "5601:80"
     # oss-web: #deploys the OSSMETER Web App
@@ -59,9 +57,6 @@ services:
             - oss-db
         networks:
             - default
-        expose: #exposes OSSMETER API client port to oss-web application
-            - 8182
-            - 8183 #Admin API?
         ports:
           - "8182:8182"
 
@@ -110,8 +105,6 @@ services:
     #    image: mongo:3.4 #use a clean database
         networks:
             - default
-        expose:  #exposes database port to oss-web and oss-app
-            - 27017
 #        volumes: #creates volume on container
 #            - ~/kb-data:/data/kb-db
  # Uncomment the port map below to give access to external mongo database visualizers
@@ -129,8 +122,6 @@ services:
         networks:
             - default
 
-        expose:
-            - 8086
         ports:
             - "8086:8086"
 
@@ -145,9 +136,6 @@ services:
         networks:
             - default
 
-        expose:
-            - 8085
-
         ports:
             - "8085:8085"
 
@@ -156,8 +144,6 @@ services:
         command: /elasticsearch/bin/elasticsearch -E network.bind_host=0.0.0.0
         networks:
             - default
-        expose:
-            - 9200
         ports:
           - "9200:9200"
         environment:
@@ -170,8 +156,6 @@ services:
           - default
       depends_on:
           - elasticsearch
-      expose:
-          - 5601
       ports:
        - "80:5601"
       environment:
