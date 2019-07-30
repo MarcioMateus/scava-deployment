@@ -65,8 +65,8 @@ services:
     #       - default
 
     oss-db: # data storage service
-        build: ./oss-db #restores a dump of of the Knowledge Base
-        # image: mongo:3.4 #current setup uses mongodb
+        # build: ./oss-db #restores a dump of of the Knowledge Base
+        image: mongo:3.4 #current setup uses mongodb
         networks:
             - default
         expose:  #exposes database port to oss-web and oss-app
