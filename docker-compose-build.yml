@@ -33,8 +33,8 @@ services:
             - api-server
         networks:
             - default
-        expose:
-            - 80
+#        expose:
+#            - 80
         ports:
             - "5601:80"
 
@@ -47,10 +47,10 @@ services:
             - elasticsearch
         networks:
             - default
-        expose: #exposes OSSMETER API client port to oss-web application
-            - 8182
-            - 8183 #Admin API?
-            - 8192 # JMX port
+#        expose: #exposes OSSMETER API client port to oss-web application
+#            - 8182
+#            - 8183 #Admin API?
+#            - 8192 # JMX port
         ports:
           - "8182:8182"
           - "8192:8192"
@@ -69,8 +69,8 @@ services:
         image: mongo:3.4 #current setup uses mongodb
         networks:
             - default
-        expose:  #exposes database port to oss-web and oss-app
-            - 27017
+ #       expose:  #exposes database port to oss-web and oss-app
+ #           - 27017
     #    volumes: #creates volume on container
     #        - ~/oss-data:/data/db
  # Uncomment the port map below to give access to external mongo database visualizers
@@ -94,8 +94,8 @@ services:
     #    image: mongo:3.4 #use a clean database
         networks:
             - default
-        expose:  #exposes database port to oss-web and oss-app
-            - 27017
+#        expose:  #exposes database port to oss-web and oss-app
+#            - 27017
 #        volumes: #creates volume on container
 #            - ~/kb-data:/data/kb-db
  # Uncomment the port map below to give access to external mongo database visualizers
@@ -113,8 +113,8 @@ services:
         networks:
             - default
 
-        expose:
-            - 8086
+ #       expose:
+ #           - 8086
         ports:
             - "8086:8086"
 
@@ -129,8 +129,8 @@ services:
         networks:
             - default
 
-        expose:
-            - 8085
+  #      expose:
+  #          - 8085
 
         ports:
             - "8085:8085"
@@ -140,8 +140,8 @@ services:
         command: /elasticsearch/bin/elasticsearch -E network.bind_host=0.0.0.0 -Ehttp.max_content_length=500mb
         networks:
             - default
-        expose:
-            - 9200
+   #     expose:
+   #         - 9200
         ports:
           - "9200:9200"
         environment:
@@ -154,8 +154,8 @@ services:
           - default
       depends_on:
           - elasticsearch
-      expose:
-          - 5601
+   #   expose:
+   #       - 5601
       ports:
        - "80:5601"
       environment:
