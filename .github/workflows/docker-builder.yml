@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - working-directory: metric-platform
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag oss-app-metric-plat:$(date +%s)
