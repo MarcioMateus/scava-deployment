@@ -24,7 +24,3 @@ elasticsearch_1_a57db85da40a | [1]: max virtual memory areas vm.max_map_count [6
 ```
 
 Make sure to increase your local max virtual memory areas count: `sudo sysctl -w vm.max_map_count=262144`
-
-
-
-   
