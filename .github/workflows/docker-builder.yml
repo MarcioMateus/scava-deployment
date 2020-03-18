@@ -4,8 +4,8 @@ on:
     branches: [ dev ]
 
 jobs:
-  my_job:
-    name: deploy to staging
+  build:
+  
     runs-on: ubuntu-18.04
     steps:
       - name: Build and push Docker images
