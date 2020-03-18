@@ -15,5 +15,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: mmateus1/test-deployment
           tags: latest
-          path: ./metric-platform/
+          path: "./metric-platform/"
           
